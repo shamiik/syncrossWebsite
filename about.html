@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en"><head>
+<script>(function(){try{var t=localStorage.getItem('syncross_theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>About Syncross - Industrial IoT &amp; AI ecosystem</title>
 <meta name="description" content="Syncross is a complete Industrial IoT and AI ecosystem that connects machines, sensors, PLCs, meters and utilities into one secure digital platform.">
@@ -305,6 +306,268 @@ section{position:relative;padding:110px 0}
 @media(prefers-reduced-motion:reduce){.dv-tab,.dv-ph{animation:none}}
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.devs{max-width:620px;margin-top:10px}}
 
+
+
+/* =========================================================
+   Syncross About Page - Light Theme Styles
+   ========================================================= */
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg1: #f1f5f9;
+  --bg2: #ffffff;
+  --line: rgba(15, 23, 42, 0.1);
+  --soft: rgba(15, 23, 42, 0.06);
+  --glass: rgba(255, 255, 255, 0.9);
+  --tx: #0f172a;
+  --mu: #475569;
+  --dim: #64748b;
+  --nb: #0284c7;
+  --nb2: #0369a1;
+  --white: #0f172a;
+  --muted: #475569;
+  --muted-dim: #64748b;
+}
+
+[data-theme="light"] body {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #top {
+  background: radial-gradient(ellipse 900px 600px at 78% 18%, rgba(139, 107, 240, 0.08), transparent 60%),
+              radial-gradient(ellipse 1000px 700px at 15% 85%, rgba(46, 168, 255, 0.08), transparent 60%),
+              linear-gradient(180deg, #f8fafc, #edf3fa 55%, #f8fafc) !important;
+}
+
+[data-theme="light"] #top::before {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px) !important;
+}
+
+[data-theme="light"] .bgglow::before {
+  background: radial-gradient(ellipse 900px 500px at 85% 0, rgba(139, 107, 240, 0.06), transparent 65%),
+              radial-gradient(ellipse 800px 500px at 8% 100%, rgba(46, 168, 255, 0.06), transparent 65%) !important;
+}
+
+[data-theme="light"] .h2,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .lead {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .stats b {
+  color: #0284c7 !important;
+  text-shadow: none !important;
+}
+
+[data-theme="light"] .stats span {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .glass {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 16px 40px -15px rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] .hubsvg .ring {
+  stroke: rgba(2, 132, 199, 0.22) !important;
+}
+
+[data-theme="light"] .hubsvg .nd rect {
+  fill: #ffffff !important;
+  stroke: #bae6fd !important;
+  filter: drop-shadow(0 2px 8px rgba(15, 23, 42, 0.08)) !important;
+}
+
+[data-theme="light"] .hubsvg .nd svg {
+  color: #0284c7 !important;
+  stroke: #0284c7 !important;
+  filter: none !important;
+}
+
+[data-theme="light"] .about p,
+[data-theme="light"] .helps li p,
+[data-theme="light"] .why li {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .tags span {
+  color: #475569 !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  background: #f1f5f9 !important;
+}
+
+[data-theme="light"] .helps li {
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] .integ li {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+}
+
+[data-theme="light"] .integ li:hover {
+  border-color: #0284c7 !important;
+  box-shadow: 0 10px 24px -10px rgba(2, 132, 199, 0.25) !important;
+}
+
+[data-theme="light"] .st {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .st h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .st .num {
+  background: linear-gradient(135deg, #0284c7, #38bdf8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3) !important;
+}
+
+[data-theme="light"] .shield::before,
+[data-theme="light"] .shield::after {
+  border-color: rgba(2, 132, 199, 0.25) !important;
+}
+
+[data-theme="light"] .sc {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+}
+
+[data-theme="light"] .sc h3 {
+  color: #0284c7 !important;
+  text-shadow: none !important;
+}
+
+[data-theme="light"] .sc p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .why {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] .btn {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn.pri {
+  background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+[data-theme="light"] #ctaf {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #ctaf .final-cta {
+  background: radial-gradient(ellipse 700px 400px at 50% 0%, rgba(2, 132, 199, 0.08), transparent 70%),
+              linear-gradient(160deg, #ffffff, #f1f5f9) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 20px 50px -20px rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] #ctaf .final-cta h2 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #ctaf .final-cta p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] #ctaf .btn-ghost {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #ctaf footer {
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] #ctaf .footer-col h5 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] #ctaf .footer-col p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] #ctaf .footer-col a {
+  color: #475569 !important;
+}
+
+[data-theme="light"] #ctaf .footer-col a:hover {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] #ctaf .newsletter-form input {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #ctaf .social-row a {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #475569 !important;
+}
+
+[data-theme="light"] #ctaf .footer-bottom {
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+  color: #64748b !important;
+}
+
+[data-theme="light"] .cm-box {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.2) !important;
+}
+
+[data-theme="light"] .cm-box h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .cm-sub {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .cm-f label {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .cm-f input,
+[data-theme="light"] .cm-f textarea {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+
+[data-theme="light"] .cm-x {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #64748b !important;
+}
 
 </style><link rel="stylesheet" href="navbar.css">
 </head><body>

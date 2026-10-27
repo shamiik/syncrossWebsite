@@ -1,4 +1,5 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="stylesheet" href="navbar.css">
+<!doctype html><html><head>
+<script>(function(){try{var t=localStorage.getItem('syncross_theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="stylesheet" href="navbar.css">
 </head><body>
 <title>Syncross PES</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -529,6 +530,298 @@ section.s::before{content:"";position:absolute;inset:0;pointer-events:none;backg
 
 
 
+
+
+/* =========================================================
+   Syncross PES Page - Light Theme Styles
+   ========================================================= */
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg2: #f1f5f9;
+  --panel: rgba(255, 255, 255, 0.92);
+  --line: rgba(15, 23, 42, 0.1);
+  --line2: rgba(15, 23, 42, 0.06);
+  --tx: #0f172a;
+  --mu: #475569;
+  --dim: #64748b;
+  --ac: #0284c7;
+  --ac-ink: #ffffff;
+  color-scheme: light;
+}
+
+[data-theme="light"] body {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #top {
+  background: #f8fafc !important;
+}
+
+[data-theme="light"] #top::after {
+  background: linear-gradient(transparent, #f8fafc) !important;
+}
+
+[data-theme="light"] #hero h1 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #hero p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] #panel {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel .pt {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel .nt {
+  color: #475569 !important;
+}
+
+[data-theme="light"] #panel .kp > div {
+  background: #f1f5f9 !important;
+}
+
+[data-theme="light"] #panel .kp small,
+[data-theme="light"] #panel .ch small {
+  color: #64748b !important;
+}
+
+[data-theme="light"] #panel .kp b {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel .ls > div {
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel .ls > div span:last-of-type {
+  color: #64748b !important;
+}
+
+[data-theme="light"] #panel .ft {
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] #panel .ft h4 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel .ft li {
+  color: #475569 !important;
+}
+
+[data-theme="light"] #nav {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] #nav button {
+  color: #475569 !important;
+}
+
+[data-theme="light"] #nav button.on {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .lb {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] section.s {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .sh h2 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .sh p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .alt {
+  background: #f1f5f9 !important;
+  border-block-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] .pg {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  background: #ffffff !important;
+}
+
+[data-theme="light"] .pc {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] .pc h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .pc p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .wf h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .wf p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .dbody {
+  background: linear-gradient(160deg, #f8fafc, #edf2f7) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] .dscr {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] .dscr div {
+  background: #f1f5f9 !important;
+}
+
+[data-theme="light"] .dscr b {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .dinfo h2 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .dinfo > p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .kd {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  border-left-color: #0284c7 !important;
+}
+
+[data-theme="light"] .kd b {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .kd span {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .ow button {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .ow button.on {
+  background: rgba(2, 132, 199, 0.1) !important;
+  border-color: #0284c7 !important;
+}
+
+[data-theme="light"] .owd {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .tabs {
+  border-bottom-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] .tabs button {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .tabs button.on {
+  color: #0f172a !important;
+  border-color: #0284c7 !important;
+}
+
+[data-theme="light"] .pl {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 16px 40px -20px rgba(15, 23, 42, 0.1) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .pl-h {
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] .pl-h span {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .pl-k div {
+  background: #f1f5f9 !important;
+}
+
+[data-theme="light"] .pl-k small {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .pl-k b {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn.pri {
+  background: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .cm .cm-box {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.2) !important;
+}
+
+[data-theme="light"] .cm .cm-box h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .cm .cm-sub {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .cm .cm-f label {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .cm .cm-f input,
+[data-theme="light"] .cm .cm-f textarea {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+
+[data-theme="light"] .cm .cm-x {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #64748b !important;
+}
+
 </style>
 <div id="site-header"></div>
 <script src="navbar.js"></script>
@@ -813,7 +1106,21 @@ var $=function(s){return document.querySelector(s)};
 var cv=$('#c'),R;
 try{R=new THREE.WebGLRenderer({canvas:cv,antialias:true})}catch(e){$('#hero').insertAdjacentHTML('beforeend','<p style="margin-top:14px">The 3D view needs WebGL. Please open this page in a browser with WebGL enabled.</p>');return}
 R.setPixelRatio(Math.min(window.devicePixelRatio||1,1.75));
-var S=new THREE.Scene();S.background=new THREE.Color(0x070d17);S.fog=new THREE.Fog(0x070d17,190,480);
+var S=new THREE.Scene();
+function updatePesSceneTheme(th){
+  if(typeof S!=='undefined'&&S){
+    if(th==='light'){
+      S.background=new THREE.Color(0xf8fafc);
+      if(S.fog)S.fog.color=new THREE.Color(0xf8fafc);
+    }else{
+      S.background=new THREE.Color(0x070d17);
+      if(S.fog)S.fog.color=new THREE.Color(0x070d17);
+    }
+  }
+}
+S.background=new THREE.Color(0x070d17);S.fog=new THREE.Fog(0x070d17,190,480);
+try{var curTh=document.documentElement.getAttribute('data-theme')||localStorage.getItem('syncross_theme')||'light';updatePesSceneTheme(curTh);}catch(e){}
+window.addEventListener('syncrossthemechange',function(e){updatePesSceneTheme(e.detail.theme);});
 var cam=new THREE.PerspectiveCamera(42,1,.1,600);
 S.add(new THREE.AmbientLight(0x8aa6cc,.9));
 var dl=new THREE.DirectionalLight(0xffffff,.9);dl.position.set(14,32,18);S.add(dl);

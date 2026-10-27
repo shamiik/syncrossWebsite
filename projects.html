@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en"><head>
+<script>(function(){try{var t=localStorage.getItem('syncross_theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>Our Projects – Syncross</title>
@@ -77,6 +78,150 @@ dialog .x{position:absolute;right:0;top:-46px;font:600 13px var(--f);color:#fff;
 @media (max-width:980px){.tn{display:none}.pgrid{grid-template-columns:1fr}.fg{grid-template-columns:1fr 1fr}.fg>div:first-child{grid-column:1/-1}}
 @media (max-width:640px){.wrap{padding:0 22px}.hero{padding-top:64px}.logo span{display:none}.cta{padding:56px 22px}.count{margin-left:0;width:100%}.shot .lg{height:38px;min-width:58px;padding:5px 10px}.shot .lg img{max-height:24px;max-width:84px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+/* =========================================================
+   Syncross Projects Page - Light Theme Styles
+   ========================================================= */
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --line: rgba(15, 23, 42, 0.1);
+  --glass: rgba(255, 255, 255, 0.9);
+  --white: #0f172a;
+  --muted: #475569;
+  --nb: #0284c7;
+  --hd: rgba(255, 255, 255, 0.92);
+  color-scheme: light;
+}
+
+[data-theme="light"] body {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] body::before {
+  background: rgba(255, 255, 255, 0.92) !important;
+}
+
+[data-theme="light"] .grid {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px) !important;
+}
+
+[data-theme="light"] .hero h1 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .hero p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .chip {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #475569 !important;
+}
+
+[data-theme="light"] .chip:hover {
+  color: #0284c7 !important;
+  border-color: #0284c7 !important;
+}
+
+[data-theme="light"] .chip.on {
+  background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+[data-theme="light"] .count {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] .shot {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] .body h3 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .body .sub {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .body > p:last-child {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .tags li {
+  background: rgba(2, 132, 199, 0.08) !important;
+  border-color: rgba(2, 132, 199, 0.25) !important;
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .cta {
+  background: radial-gradient(ellipse 700px 400px at 50% 0, rgba(2, 132, 199, 0.08), transparent 70%),
+              linear-gradient(160deg, #ffffff, #f1f5f9) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 20px 50px -20px rgba(15, 23, 42, 0.1) !important;
+}
+
+[data-theme="light"] .cta h2 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .cta p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .cta .btn:not(.pri) {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] footer {
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] .fg h4 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .fg p,
+[data-theme="light"] .fg a {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .fg a:hover {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .fb {
+  border-top-color: rgba(15, 23, 42, 0.08) !important;
+  color: #64748b !important;
+}
+
+[data-theme="light"] dialog {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] dialog .cap {
+  color: #475569 !important;
+}
+
+[data-theme="light"] dialog .x {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+}
 
 </style><link rel="stylesheet" href="navbar.css">
 </head>

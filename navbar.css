@@ -353,3 +353,190 @@ header#gh .btn:hover, header#gh .btn.pri.sm:hover {
   header .tn, header#gh .tn { display: none !important; }
   .mob-menu-btn { display: inline-flex !important; }
 }
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: rgba(9, 18, 34, 0.8) !important;
+  border: 1px solid var(--line, rgba(150, 190, 255, 0.22)) !important;
+  border-radius: 999px !important;
+  color: var(--tx, #e8f1ff) !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(46, 168, 255, 0.15) !important;
+  border-color: var(--ac, #2ea8ff) !important;
+  color: #fff !important;
+  transform: scale(1.05) !important;
+}
+
+.theme-toggle-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease !important;
+}
+
+.theme-toggle-btn .sun-icon {
+  display: block !important;
+}
+.theme-toggle-btn .moon-icon {
+  display: none !important;
+}
+
+/* =========================================================
+   Light Theme unified navbar styles
+   ========================================================= */
+[data-theme="light"] header.scrolled,
+[data-theme="light"] header#gh.scrolled {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+}
+
+[data-theme="light"] header .logo,
+[data-theme="light"] header#gh .logo {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] header .logo span,
+[data-theme="light"] header#gh .logo span {
+  color: #64748b !important;
+}
+
+[data-theme="light"] header .logo img.lg,
+[data-theme="light"] header#gh .logo img.lg {
+  filter: none !important;
+}
+
+[data-theme="light"] header .tn,
+[data-theme="light"] header#gh .tn {
+  color: #475569 !important;
+}
+
+[data-theme="light"] header .tn a,
+[data-theme="light"] header#gh .tn a {
+  color: #475569 !important;
+}
+
+[data-theme="light"] header .tn a:hover,
+[data-theme="light"] header .tn a:focus-visible,
+[data-theme="light"] header#gh .tn a:hover,
+[data-theme="light"] header#gh .tn a:focus-visible,
+[data-theme="light"] header .tn a.active,
+[data-theme="light"] header#gh .tn a.active {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] header .nav-dd-btn,
+[data-theme="light"] header#gh .nav-dd-btn {
+  color: #475569 !important;
+}
+
+[data-theme="light"] header .nav-dd-btn:hover,
+[data-theme="light"] header .nav-dd:hover .nav-dd-btn,
+[data-theme="light"] header .nav-dd.open .nav-dd-btn,
+[data-theme="light"] header#gh .nav-dd-btn:hover,
+[data-theme="light"] header#gh .nav-dd:hover .nav-dd-btn,
+[data-theme="light"] header#gh .nav-dd.open .nav-dd-btn {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] header .nav-dd-menu,
+[data-theme="light"] header#gh .nav-dd-menu {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
+}
+
+[data-theme="light"] header .nav-dd-item,
+[data-theme="light"] header#gh .nav-dd-item {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] header .nav-dd-item:hover,
+[data-theme="light"] header#gh .nav-dd-item:hover {
+  background: rgba(2, 132, 199, 0.08) !important;
+  color: #0284c7 !important;
+  border-color: rgba(2, 132, 199, 0.16) !important;
+}
+
+[data-theme="light"] header .nav-dd-item.active,
+[data-theme="light"] header#gh .nav-dd-item.active {
+  background: rgba(2, 132, 199, 0.12) !important;
+  color: #0284c7 !important;
+  border-color: rgba(2, 132, 199, 0.25) !important;
+}
+
+[data-theme="light"] .theme-toggle-btn {
+  background: rgba(15, 23, 42, 0.05) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+  background: rgba(15, 23, 42, 0.1) !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .theme-toggle-btn .sun-icon {
+  display: none !important;
+}
+[data-theme="light"] .theme-toggle-btn .moon-icon {
+  display: block !important;
+}
+
+[data-theme="light"] header .btn.pri,
+[data-theme="light"] header#gh .btn.pri {
+  background: #0091ff !important;
+  border-color: #0091ff !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .mob-menu-btn {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .mob-drawer {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15) !important;
+}
+
+[data-theme="light"] .mob-drawer-title {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .mob-drawer a {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .mob-drawer a:hover {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .mob-sub-item {
+  background: rgba(15, 23, 42, 0.04) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .mob-sub-item:hover {
+  background: rgba(2, 132, 199, 0.1) !important;
+  color: #0284c7 !important;
+}
+

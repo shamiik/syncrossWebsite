@@ -3,6 +3,14 @@
  * Reusable, single-source-of-truth navbar for all pages.
  */
 (function() {
+  // Apply saved theme immediately, default to 'light' per user request
+  try {
+    const savedTheme = localStorage.getItem('syncross_theme') || 'light';
+    if (!document.documentElement.getAttribute('data-theme')) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  } catch(e) {}
+
   function initNavbar() {
     // Prevent duplicate rendering
     if (document.getElementById('gh') && document.getElementById('gh').dataset.syncrossNav === 'ready') {
@@ -74,6 +82,22 @@
     <a href="contact.html"${page === 'contact.html' ? ' class="active"' : ''}>Contact</a>
   </div>
   <div class="header-actions">
+    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme" title="Toggle light/dark theme" type="button">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
     <a class="btn pri sm" href="${ctaHref}" ${ctaAttr}>Get Demo</a>
     <button class="mob-menu-btn" id="mobMenuBtn" aria-label="Toggle navigation menu" type="button" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -170,7 +194,21 @@
       });
     }
 
-    // 3. Scroll Backdrop Blur
+    // 3. Theme Toggle Button
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function() {
+        const cur = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try {
+          localStorage.setItem('syncross_theme', next);
+        } catch(err) {}
+        window.dispatchEvent(new CustomEvent('syncrossthemechange', { detail: { theme: next } }));
+      });
+    }
+
+    // 4. Scroll Backdrop Blur
     const gh = document.getElementById('gh');
     if (gh) {
       const onScroll = function() {
