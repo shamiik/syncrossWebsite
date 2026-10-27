@@ -24,7 +24,7 @@ html{scroll-behavior:smooth}body{margin:0;background:#060a12;color:var(--tx);fon
 .btn:hover{border-color:var(--ac)}
 .btn:focus-visible,nav button:focus-visible,.lb:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 .btn.pri{background:var(--ac);color:#04101c;border-color:var(--ac);font-size:15px;padding:12px 22px}
-#hero{position:absolute;left:6vw;top:50%;transform:translateY(-50%);max-width:470px;transition:opacity .5s}
+#hero{position:absolute;left:6vw;top:clamp(110px, 15vh, 150px);transform:none;max-width:490px;transition:opacity .5s}
 #hero h1{font-size:clamp(28px,3.8vw,46px);line-height:1.04;margin:0 0 16px;letter-spacing:-.025em}
 #hero p{color:var(--mu);font-size:17px;line-height:1.55;margin:0 0 24px}
 #hero .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
@@ -2542,126 +2542,130 @@ function spark(a,x,y,w,h,col,fill,mn,mx){mn=mn??Math.min(...a);mx=mx??Math.max(.
  a.forEach((v,j)=>{const px=x+j*w/(a.length-1),py=y+h-(v-mn)/sp*h;j?dx.lineTo(px,py):dx.moveTo(px,py)});
  dx.strokeStyle=col;dx.lineWidth=3;dx.stroke();
  if(fill){dx.lineTo(x+w,y+h);dx.lineTo(x,y+h);dx.closePath();dx.globalAlpha=.15;dx.fillStyle=col;dx.fill();dx.globalAlpha=1}}
+const dashLogo = new Image();
+dashLogo.src = 'asset/img/logo.png';
 function card(x,y,w,h,on,c){
- const isL = (typeof document !== 'undefined' && document.documentElement.getAttribute('data-theme')) === 'light';
- dx.fillStyle = on ? (isL ? 'rgba(2,132,199,.15)' : 'rgba(255,255,255,.1)') : (isL ? 'rgba(15,23,42,.04)' : 'rgba(255,255,255,.04)');
- rr(x,y,w,h,18);dx.fill();
- dx.strokeStyle = on ? c : (isL ? 'rgba(15,23,42,.12)' : 'rgba(150,190,255,.18)');
- dx.lineWidth = on ? 4 : 2;dx.stroke();
+  dx.fillStyle = on ? 'rgba(255,255,255,.1)' : 'rgba(255,255,255,.04)';
+  rr(x,y,w,h,18);
+  dx.fill();
+  dx.strokeStyle = on ? c : 'rgba(150,190,255,.18)';
+  dx.lineWidth = on ? 4 : 2;
+  dx.stroke();
 }
 function drawDash(){
- const isL = (typeof document !== 'undefined' && document.documentElement.getAttribute('data-theme')) === 'light';
- dx.clearRect(0,0,DW,DH);
- dx.fillStyle = isL ? 'rgba(255,255,255,.96)' : 'rgba(7,16,29,.95)';
- rr(0,0,DW,DH,28);dx.fill();
- dx.strokeStyle = isL ? 'rgba(0,145,255,.45)' : 'rgba(208,50,63,.55)';
- dx.lineWidth = 3;dx.stroke();
- const LG = document.querySelector('header img.lg');
- if (LG && LG.complete && LG.naturalWidth) {
-   dx.drawImage(LG,36,24,175,35);
-   dx.fillStyle = isL ? '#0f172a' : '#e8f1ff';
-   F(34,700);
-   dx.fillText('Intelligent dashboard',230,58);
- } else {
-   dx.fillStyle = isL ? '#0f172a' : '#e8f1ff';
-   F(40,700);
-   dx.fillText('Syncross intelligent dashboard',36,62);
- }
- dx.fillStyle = isL ? '#475569' : '#8fa6c4';
- F(22);
- dx.fillText('Energy, utility, OEE, compressor and maintenance in one live view',36,96);
- dx.textAlign = 'right';
- F(24,600);
- dx.fillStyle = isL ? '#0f172a' : '#e8f1ff';
- dx.fillText(new Date().toLocaleTimeString(),1500,66);
- dx.fillStyle = '#34d399';
- dx.beginPath();
- dx.arc(1500-dx.measureText(new Date().toLocaleTimeString()).width-70,57,8,0,7);
- dx.fill();
- dx.fillStyle = isL ? '#475569' : '#8fa6c4';
- F(22);
- dx.fillText('Live',1500-dx.measureText(new Date().toLocaleTimeString()).width-24,64);
- dx.textAlign = 'left';
- Z.forEach((z,i)=>{
-  const x = 30+i*298, y = 120, w = 280, c = hex(z.c);
-  card(x,y,w,350,cs===i,c);
-  dx.fillStyle = c;
-  rr(x,y,w,8,4);
+  dx.clearRect(0,0,DW,DH);
+  dx.fillStyle = 'rgba(7,16,29,.95)';
+  rr(0,0,DW,DH,28);
   dx.fill();
-  dx.fillStyle = isL ? '#0f172a' : '#e8f1ff';
-  F(30,700);
-  dx.fillText(short[i],x+22,y+56);
-  const k0 = z.kpi[0], t0 = fmt(k0[1]+Math.sin(T*.6+i*1.3)*k0[4],k0[3]);
-  F(66,700);
-  dx.fillStyle = c;
-  dx.fillText(t0,x+22,y+138);
-  const vw = dx.measureText(t0).width;
-  F(24);
-  dx.fillStyle = isL ? '#475569' : '#8fa6c4';
-  dx.fillText(k0[2],x+30+vw,y+138);
+  dx.strokeStyle = 'rgba(208,50,63,.55)';
+  dx.lineWidth = 3;
+  dx.stroke();
+  const LG = (dashLogo.complete && dashLogo.naturalWidth) ? dashLogo : document.querySelector('header img.lg');
+  if (LG && LG.complete && LG.naturalWidth) {
+    dx.drawImage(LG,36,24,175,35);
+    dx.fillStyle = '#e8f1ff';
+    F(34,700);
+    dx.fillText('Intelligent dashboard',230,58);
+  } else {
+    dx.fillStyle = '#e8f1ff';
+    F(40,700);
+    dx.fillText('Syncross intelligent dashboard',36,62);
+  }
+  dx.fillStyle = '#8fa6c4';
   F(22);
-  dx.fillText(k0[0],x+22,y+168);
-  const k1 = z.kpi[1];
-  F(26,600);
-  dx.fillStyle = isL ? '#0f172a' : '#e8f1ff';
-  dx.fillText(fmt(k1[1]+Math.sin(T*.5+i)*k1[4],k1[3])+' '+k1[2],x+22,y+212);
-  F(22);
-  dx.fillStyle = isL ? '#475569' : '#8fa6c4';
-  dx.fillText(k1[0],x+22,y+240);
-  spark(ds[i],x+22,y+256,w-44,50,c,true);
-  const bad = z.list.filter(l=>l[2]==='bad').length, warn = z.list.filter(l=>l[2]==='warn').length;
-  dx.fillStyle = bad?'#f87171':warn?'#fbbf24':'#34d399';
+  dx.fillText('Energy, utility, OEE, compressor and maintenance in one live view',36,96);
+  dx.textAlign = 'right';
+  F(24,600);
+  dx.fillStyle = '#e8f1ff';
+  dx.fillText(new Date().toLocaleTimeString(),1500,66);
+  dx.fillStyle = '#34d399';
   dx.beginPath();
-  dx.arc(x+30,y+327,7,0,7);
+  dx.arc(1500-dx.measureText(new Date().toLocaleTimeString()).width-70,57,8,0,7);
   dx.fill();
-  dx.fillStyle = isL ? '#475569' : '#8fa6c4';
+  dx.fillStyle = '#8fa6c4';
   F(22);
-  dx.fillText(bad?bad+' alert':warn?warn+' to watch':'Normal',x+46,y+334);
- });
- card(30,490,930,344,false);
- dx.fillStyle = isL ? '#0f172a' : '#e8f1ff';
- F(28,700);
- dx.fillText('Plant load and AI forecast',54,534);
- dx.fillStyle = isL ? '#475569' : '#8fa6c4';
- F(22);
- dx.fillText('kW, last 40 readings',54,562);
- dx.strokeStyle = isL ? 'rgba(15,23,42,.1)' : 'rgba(150,190,255,.12)';
- dx.lineWidth = 1;
- for(let g=0;g<5;g++){
-   dx.beginPath();
-   dx.moveTo(54,590+g*50);
-   dx.lineTo(936,590+g*50);
-   dx.stroke();
- }
- const a = ds[0], mn = Math.min(...a)-10, mx = Math.max(...a)+10, fc = a.map((v,j)=>(a[Math.max(0,j-2)]+v+a[Math.min(39,j+2)])/3+10);
- spark(a,54,590,882,200,hex(Z[0].c),true,mn,mx);
- dx.setLineDash([10,8]);
- spark(fc,54,590,882,200,'#d0323f',false,mn,mx);
- dx.setLineDash([]);
- dx.fillStyle = hex(Z[0].c);
- dx.fillRect(700,540,26,6);
- dx.fillStyle = isL ? '#475569' : '#8fa6c4';
- F(20);
- dx.fillText('Actual',736,548);
- dx.fillStyle = '#d0323f';
- dx.fillRect(826,540,26,6);
- dx.fillStyle = isL ? '#475569' : '#8fa6c4';
- dx.fillText('AI forecast',862,548);
- card(978,490,528,344,false);
- dx.fillStyle = isL ? '#0f172a' : '#e8f1ff';
- F(28,700);
- dx.fillText('AI insights',1002,534);
- const k = Math.floor(T/4);
- for(let j=0;j<4;j++){
-   const it = INS[(k+j)%INS.length], y = 590+j*58;
-   dx.fillStyle = hex(Z[it[0]].c);
-   dx.beginPath();
-   dx.arc(1010,y-7,8,0,7);
+  dx.fillText('Live',1500-dx.measureText(new Date().toLocaleTimeString()).width-24,64);
+  dx.textAlign = 'left';
+  Z.forEach((z,i)=>{
+   const x = 30+i*298, y = 120, w = 280, c = hex(z.c);
+   card(x,y,w,350,cs===i,c);
+   dx.fillStyle = c;
+   rr(x,y,w,8,4);
    dx.fill();
-   dx.fillStyle = isL ? '#0f172a' : '#e8f1ff';
+   dx.fillStyle = '#e8f1ff';
+   F(30,700);
+   dx.fillText(short[i],x+22,y+56);
+   const k0 = z.kpi[0], t0 = fmt(k0[1]+Math.sin(T*.6+i*1.3)*k0[4],k0[3]);
+   F(66,700);
+   dx.fillStyle = c;
+   dx.fillText(t0,x+22,y+138);
+   const vw = dx.measureText(t0).width;
+   F(24);
+   dx.fillStyle = '#8fa6c4';
+   dx.fillText(k0[2],x+30+vw,y+138);
    F(22);
-   dx.fillText(it[1],1034,y);
- }
+   dx.fillText(k0[0],x+22,y+168);
+   const k1 = z.kpi[1];
+   F(26,600);
+   dx.fillStyle = '#e8f1ff';
+   dx.fillText(fmt(k1[1]+Math.sin(T*.5+i)*k1[4],k1[3])+' '+k1[2],x+22,y+212);
+   F(22);
+   dx.fillStyle = '#8fa6c4';
+   dx.fillText(k1[0],x+22,y+240);
+   spark(ds[i],x+22,y+256,w-44,50,c,true);
+   const bad = z.list.filter(l=>l[2]==='bad').length, warn = z.list.filter(l=>l[2]==='warn').length;
+   dx.fillStyle = bad?'#f87171':warn?'#fbbf24':'#34d399';
+   dx.beginPath();
+   dx.arc(x+30,y+327,7,0,7);
+   dx.fill();
+   dx.fillStyle = '#8fa6c4';
+   F(22);
+   dx.fillText(bad?bad+' alert':warn?warn+' to watch':'Normal',x+46,y+334);
+  });
+  card(30,490,930,344,false);
+  dx.fillStyle = '#e8f1ff';
+  F(28,700);
+  dx.fillText('Plant load and AI forecast',54,534);
+  dx.fillStyle = '#8fa6c4';
+  F(22);
+  dx.fillText('kW, last 40 readings',54,562);
+  dx.strokeStyle = 'rgba(150,190,255,.12)';
+  dx.lineWidth = 1;
+  for(let g=0;g<5;g++){
+    dx.beginPath();
+    dx.moveTo(54,590+g*50);
+    dx.lineTo(936,590+g*50);
+    dx.stroke();
+  }
+  const a = ds[0], mn = Math.min(...a)-10, mx = Math.max(...a)+10, fc = a.map((v,j)=>(a[Math.max(0,j-2)]+v+a[Math.min(39,j+2)])/3+10);
+  spark(a,54,590,882,200,hex(Z[0].c),true,mn,mx);
+  dx.setLineDash([10,8]);
+  spark(fc,54,590,882,200,'#d0323f',false,mn,mx);
+  dx.setLineDash([]);
+  dx.fillStyle = hex(Z[0].c);
+  dx.fillRect(700,540,26,6);
+  dx.fillStyle = '#8fa6c4';
+  F(20);
+  dx.fillText('Actual',736,548);
+  dx.fillStyle = '#d0323f';
+  dx.fillRect(826,540,26,6);
+  dx.fillStyle = '#8fa6c4';
+  dx.fillText('AI forecast',862,548);
+  card(978,490,528,344,false);
+  dx.fillStyle = '#e8f1ff';
+  F(28,700);
+  dx.fillText('AI insights',1002,534);
+  const k = Math.floor(T/4);
+  for(let j=0;j<4;j++){
+    const it = INS[(k+j)%INS.length], y = 590+j*58;
+    dx.fillStyle = hex(Z[it[0]].c);
+    dx.beginPath();
+    dx.arc(1010,y-7,8,0,7);
+    dx.fill();
+    dx.fillStyle = '#e8f1ff';
+    F(22);
+    dx.fillText(it[1],1034,y);
+  }
 }
 let lastS=0,lastD=-9;
 function dashTick(){

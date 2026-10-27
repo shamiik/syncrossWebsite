@@ -540,3 +540,66 @@ header#gh .btn:hover, header#gh .btn.pri.sm:hover {
   color: #0284c7 !important;
 }
 
+/* =========================================================
+   Universal Hero Title Consistency (Standardized to index.html)
+   ========================================================= */
+
+@media (min-width: 801px) {
+  #hero {
+    position: absolute !important;
+    left: 6vw !important;
+    top: clamp(110px, 15vh, 150px) !important;
+    transform: none !important;
+    max-width: 490px !important;
+  }
+
+  /* Non-3D Hero Pages (About, Contact, Projects) */
+  body.about-page #top,
+  section.hero,
+  #top.hero-static {
+    padding-top: clamp(110px, 15vh, 150px) !important;
+  }
+
+  body.about-page #top > .wrap,
+  section.hero > .wrap,
+  .hero-grid-wrap {
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+  }
+}
+
+#hero h1,
+.hero h1,
+#top h1,
+.hero-head h1 {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  font-size: clamp(28px, 3.8vw, 46px) !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 0 16px 0 !important;
+}
+
+#hero h1 small,
+.hero h1 small,
+#top h1 small,
+.hero-head h1 small {
+  display: block !important;
+  margin-top: 10px !important;
+  font-size: clamp(18px, 2.2vw, 26px) !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+}
+
+#hero p,
+.hero p.lead,
+#top .lead,
+.hero-desc {
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+  margin: 0 0 24px 0 !important;
+  max-width: 480px !important;
+}
+
+

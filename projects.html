@@ -15,7 +15,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;-webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
 a{color:inherit;text-decoration:none}
 h1,h2,h3{font-weight:600;letter-spacing:-.02em}
-.wrap{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+.wrap{max-width:1400px;width:100%;margin:0 auto;padding:0 6vw;position:relative;z-index:2;box-sizing:border-box}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hd);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 
 .logo{display:flex;align-items:center;gap:12px}.logo img{height:30px;width:auto;display:block}.logo span{color:var(--muted);font-size:13px}
@@ -31,8 +31,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:va
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--nb);text-shadow:0 0 12px rgba(46,168,255,.55);margin-bottom:18px}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--nb);box-shadow:0 0 10px 2px var(--nb);animation:blink 2.2s ease-in-out infinite}
 @keyframes blink{50%{opacity:.35}}
-.hero{position:relative;padding:96px 0 28px}
-.hero h1{font-size:clamp(32px,4.4vw,56px);line-height:1.1;max-width:16ch;margin-bottom:16px}
+.hero{position:relative;padding:clamp(110px, 15vh, 150px) 0 28px}
+.hero h1{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:clamp(28px,3.8vw,46px);line-height:1.05;letter-spacing:-.025em;max-width:16ch;margin-bottom:16px}
 .hero p{color:var(--muted);font-size:17px;max-width:600px}
 .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:36px}
 .chip{font:600 13.5px var(--f);color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;transition:.25s}
@@ -232,7 +232,7 @@ dialog .x{position:absolute;right:0;top:-46px;font:600 13px var(--f);color:#fff;
 
 <main>
 <section class="hero"><div class="wrap">
-<div class="ico" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="5" width="10" height="9" rx="2"/><rect x="18" y="5" width="10" height="9" rx="2"/><rect x="4" y="18" width="10" height="9" rx="2"/><path d="M18 22.500h10M23 18v9"/></svg></div>
+
 <div class="eyebrow">Our Projects</div>
 <h1>Our Key Projects</h1>
 <p>Turnkey industrial digitalization for manufacturers and utilities. These are the Syncross dashboards running in our clients’ plants today.</p>
