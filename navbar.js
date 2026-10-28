@@ -369,16 +369,27 @@
 
     // 6. Universal Footer Component (Single-source-of-truth matching index.html)
     function initFooter() {
-      let footer = document.getElementById('contact') || document.querySelector('footer');
-      if (!footer) {
-        footer = document.createElement('footer');
-        footer.id = 'contact';
+      // Clean up any stray footer mistakenly created before #top
+      const allFooters = document.querySelectorAll('footer');
+      if (allFooters.length > 1) {
+        allFooters.forEach(function(f, i) {
+          if (i < allFooters.length - 1) {
+            f.remove();
+          }
+        });
+      }
+
+      // Only configure the legitimate footer at the bottom of the page
+      const footer = document.querySelector('footer#contact') || document.querySelector('footer');
+      if (!footer) return;
+
+      footer.id = 'contact';
+      footer.setAttribute('data-syncross-footer', 'ready');
+
+      // Ensure footer is always at the bottom of body
+      if (footer.parentElement === document.body && document.body.lastElementChild !== footer) {
         document.body.appendChild(footer);
       }
-      if (footer.id !== 'contact') {
-        footer.id = 'contact';
-      }
-      footer.setAttribute('data-syncross-footer', 'ready');
 
       // Interactive newsletter subscription handler
       const forms = footer.querySelectorAll('.newsletter-form');
@@ -403,7 +414,12 @@
         }
       });
     }
-    initFooter();
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFooter);
+    } else {
+      initFooter();
+    }
   }
 
   // Execute immediately if body is ready, or on DOMContentLoaded
