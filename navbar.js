@@ -24,14 +24,56 @@
     page = page.split('?')[0].split('#')[0];
     if (!page) page = 'index.html';
 
-    // Solutions pages list
+    // Solutions pages list with icons, descriptions, and accent colors
     const solutions = [
-      { name: 'Energy Management System', file: 'Syncross_EMS_Page.html' },
-      { name: 'Utility Management System', file: 'Syncross_UMS_Page.html' },
-      { name: 'OEE Monitoring', file: 'Syncross_OEE_Page.html' },
-      { name: 'Compressor Management System', file: 'Syncross_CMS_Page.html' },
-      { name: 'Maintenance Management', file: 'Syncross_IMMS_Page.html' },
-      { name: 'Production Enhancement System', file: 'Syncross_PES_Page.html' }
+      {
+        name: 'Energy Management System',
+        shortTitle: 'Energy Management',
+        desc: 'Real-time power, peak demand & carbon tracking',
+        file: 'Syncross_EMS_Page.html',
+        color: '#f59e0b',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>'
+      },
+      {
+        name: 'Utility Management System',
+        shortTitle: 'Utility Management',
+        desc: 'Water, steam, gas & flow meter analytics',
+        file: 'Syncross_UMS_Page.html',
+        color: '#0ea5e9',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>'
+      },
+      {
+        name: 'OEE Monitoring',
+        shortTitle: 'OEE Monitoring',
+        desc: 'Availability, performance & quality scores',
+        file: 'Syncross_OEE_Page.html',
+        color: '#10b981',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>'
+      },
+      {
+        name: 'Compressor Management System',
+        shortTitle: 'Compressor Management',
+        desc: 'Header pressure, SEC & air leak detection',
+        file: 'Syncross_CMS_Page.html',
+        color: '#f97316',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>'
+      },
+      {
+        name: 'Maintenance Management',
+        shortTitle: 'Maintenance Management',
+        desc: 'Predictive work orders & asset health scoring',
+        file: 'Syncross_IMMS_Page.html',
+        color: '#8b5cf6',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+      },
+      {
+        name: 'Production Enhancement System',
+        shortTitle: 'Production Enhancement',
+        desc: 'Sewing line output, efficiency & defect rates',
+        file: 'Syncross_PES_Page.html',
+        color: '#3b82f6',
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>'
+      }
     ];
 
     const isSolutionPage = solutions.some(s => s.file === page);
@@ -50,13 +92,25 @@
     // Generate solutions dropdown HTML
     const ddItemsHtml = solutions.map(s => {
       const activeClass = (page === s.file) ? ' active' : '';
-      return `<a href="${s.file}" class="nav-dd-item${activeClass}" role="menuitem">${s.name}</a>`;
+      return `<a href="${s.file}" class="nav-dd-item${activeClass}" role="menuitem" style="--mc:${s.color}">
+          <span class="nav-dd-ico" aria-hidden="true">${s.icon}</span>
+          <span class="nav-dd-txt">
+            <span class="nav-dd-title">${s.shortTitle}<svg class="nav-dd-go" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            <span class="nav-dd-desc">${s.desc}</span>
+          </span>
+        </a>`;
     }).join('\n        ');
 
     // Generate mobile drawer solutions HTML
     const mobDdItemsHtml = solutions.map(s => {
       const activeClass = (page === s.file) ? ' active' : '';
-      return `<a href="${s.file}" class="mob-sub-item${activeClass}">${s.name}</a>`;
+      return `<a href="${s.file}" class="mob-sub-item${activeClass}" style="--mc:${s.color}">
+          <span class="mob-sub-ico" aria-hidden="true">${s.icon}</span>
+          <span class="mob-sub-txt">
+            <span class="mob-sub-title">${s.shortTitle}</span>
+            <span class="mob-sub-desc">${s.desc}</span>
+          </span>
+        </a>`;
     }).join('\n        ');
 
     // Build complete header HTML
@@ -74,7 +128,9 @@
         <svg class="nav-dd-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
       </button>
       <div class="nav-dd-menu" role="menu">
-        ${ddItemsHtml}
+        <div class="nav-dd-grid">
+          ${ddItemsHtml}
+        </div>
       </div>
     </div>
     <a href="projects.html"${page === 'projects.html' ? ' class="active"' : ''}>Projects</a>
@@ -107,8 +163,11 @@
 <div class="mob-drawer" id="mobDrawer" aria-hidden="true">
   <div class="mob-drawer-sec">
     <a href="index.html"${page === 'index.html' ? ' class="active"' : ''}>Home</a>
-    <span class="mob-drawer-title">Solutions</span>
-    <div class="mob-sub-list">
+    <button class="mob-solutions-btn" id="mobSolutionsToggle" type="button" aria-expanded="false">
+      <span>Solutions</span>
+      <svg class="mob-solutions-arrow" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+    </button>
+    <div class="mob-sub-list" id="mobSolutionsList">
       ${mobDdItemsHtml}
     </div>
     <a href="projects.html"${page === 'projects.html' ? ' class="active"' : ''}>Projects</a>
@@ -140,31 +199,71 @@
   }
 
   function setupInteractions() {
-    // 1. Solutions Dropdown
+    // 1. Solutions Dropdown (with hover grace delay so cursor can travel smoothly)
     const dd = document.getElementById('solutionsDropdown');
     if (dd) {
       const btn = dd.querySelector('.nav-dd-btn');
+      let closeTimer = null;
+
+      const openDd = function() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+        dd.classList.add('open');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+      };
+
+      const scheduleCloseDd = function() {
+        if (closeTimer) clearTimeout(closeTimer);
+        closeTimer = setTimeout(function() {
+          dd.classList.remove('open');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }, 200);
+      };
+
+      dd.addEventListener('mouseenter', openDd);
+      dd.addEventListener('mouseleave', scheduleCloseDd);
+
       if (btn) {
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
+          if (closeTimer) {
+            clearTimeout(closeTimer);
+            closeTimer = null;
+          }
           const isOpen = dd.classList.toggle('open');
           btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
       }
       document.addEventListener('click', function(e) {
         if (!dd.contains(e.target)) {
+          if (closeTimer) clearTimeout(closeTimer);
           dd.classList.remove('open');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         }
       });
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && dd.classList.contains('open')) {
+          if (closeTimer) clearTimeout(closeTimer);
           dd.classList.remove('open');
           if (btn) {
             btn.setAttribute('aria-expanded', 'false');
             btn.focus();
           }
         }
+      });
+    }
+
+    // Solutions Accordion in Mobile Drawer
+    const mobSolToggle = document.getElementById('mobSolutionsToggle');
+    const mobSolList = document.getElementById('mobSolutionsList');
+    if (mobSolToggle && mobSolList) {
+      mobSolToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = mobSolToggle.classList.toggle('open');
+        mobSolList.classList.toggle('open', isOpen);
+        mobSolToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     }
 
@@ -205,6 +304,17 @@
           localStorage.setItem('syncross_theme', next);
         } catch(err) {}
         window.dispatchEvent(new CustomEvent('syncrossthemechange', { detail: { theme: next } }));
+        // Also notify any embedded iframes (e.g. IMMS dashboard)
+        document.querySelectorAll('iframe').forEach(function(f) {
+          try {
+            if (f.contentDocument && f.contentDocument.documentElement) {
+              f.contentDocument.documentElement.dataset.theme = next;
+            }
+            if (f.contentWindow) {
+              f.contentWindow.postMessage({ type: 'syncrossthemechange', theme: next }, '*');
+            }
+          } catch(e) {}
+        });
       });
     }
 
@@ -217,6 +327,83 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     }
+
+    // 5. Back to Top Floating Button
+    function initBackToTop() {
+      let btn = document.getElementById('backToTopBtn');
+      if (!btn) {
+        btn = document.createElement('button');
+        btn.id = 'backToTopBtn';
+        btn.className = 'back-to-top-btn';
+        btn.setAttribute('type', 'button');
+        btn.setAttribute('aria-label', 'Back to top');
+        btn.setAttribute('title', 'Scroll to top');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+        document.body.appendChild(btn);
+      }
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      let ticking = false;
+      const onScrollTop = function() {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            if (window.scrollY > 280) {
+              btn.classList.add('visible');
+            } else {
+              btn.classList.remove('visible');
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+
+      window.addEventListener('scroll', onScrollTop, { passive: true });
+      onScrollTop();
+    }
+    initBackToTop();
+
+    // 6. Universal Footer Component (Single-source-of-truth matching index.html)
+    function initFooter() {
+      let footer = document.getElementById('contact') || document.querySelector('footer');
+      if (!footer) {
+        footer = document.createElement('footer');
+        footer.id = 'contact';
+        document.body.appendChild(footer);
+      }
+      if (footer.id !== 'contact') {
+        footer.id = 'contact';
+      }
+      footer.setAttribute('data-syncross-footer', 'ready');
+
+      // Interactive newsletter subscription handler
+      const forms = footer.querySelectorAll('.newsletter-form');
+      forms.forEach(function(form) {
+        if (!form.dataset.bound) {
+          form.dataset.bound = 'true';
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = form.querySelector('input[type="email"]');
+            const btn = form.querySelector('button');
+            if (input && input.value.trim() && btn) {
+              const origText = btn.textContent;
+              btn.textContent = 'Subscribed!';
+              btn.style.pointerEvents = 'none';
+              input.value = '';
+              setTimeout(function() {
+                btn.textContent = origText;
+                btn.style.pointerEvents = '';
+              }, 3000);
+            }
+          });
+        }
+      });
+    }
+    initFooter();
   }
 
   // Execute immediately if body is ready, or on DOMContentLoaded
