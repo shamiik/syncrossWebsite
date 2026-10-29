@@ -4888,6 +4888,322 @@ nav button{min-height:40px;padding:9px 13px;scroll-snap-align:center;flex:none}
     box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35) !important;
   }
 
+/* ===== 3D Floating Zone Panel (Normal & Expanded "Learn More" View) ===== */
+#stage3d #panel,
+#panel {
+  position: absolute;
+  right: 18px;
+  top: 68px;
+  width: 350px;
+  max-width: calc(100vw - 36px);
+  max-height: calc(100% - 90px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+#stage3d #panel.wide,
+#panel.wide {
+  position: absolute !important;
+  right: 18px !important;
+  left: auto !important;
+  top: 68px !important;
+  bottom: auto !important;
+  width: min(920px, calc(100vw - 36px)) !important;
+  max-width: 920px !important;
+  max-height: calc(100% - 90px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 22px 24px 18px !important;
+  border-radius: 18px !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45) !important;
+  z-index: 20 !important;
+}
+
+#panel.wide .pt {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+#panel.wide .pt i {
+  width: 10px !important;
+  height: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+#panel.wide .pt span {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  color: var(--tx) !important;
+}
+
+#panel.wide .pt em {
+  font-style: normal !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  background: rgba(52, 211, 153, 0.16) !important;
+  color: #10b981 !important;
+  border: 1px solid rgba(52, 211, 153, 0.35) !important;
+  margin-left: 0 !important;
+}
+
+#panel.wide .pt .back {
+  margin-left: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 7px 16px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+#panel.wide .pt .back:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 2-Column layout on Desktop */
+.ems {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.ems > div {
+  min-width: 0 !important;
+}
+
+/* 6 KPI Cards in 3x2 Grid */
+.kp.k3 {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.kp.k3 > div,
+.kp > div {
+  min-width: 0 !important;
+  border-radius: 12px !important;
+  padding: 10px 12px !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.kp.k3 b {
+  font-size: 21px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 4px !important;
+  margin: 4px 0 2px !important;
+}
+
+.kp.k3 small {
+  font-size: 11.5px !important;
+  line-height: 1.3 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Sub-grid for Feeders & Alerts */
+.em-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 18px !important;
+  margin-top: 14px !important;
+  min-width: 0 !important;
+}
+
+.em-2 > div {
+  min-width: 0 !important;
+}
+
+/* Key Features right-side list */
+.em-ft {
+  margin: 0 !important;
+  border-top: 0 !important;
+  padding-top: 0 !important;
+  border-left: 1px solid var(--line) !important;
+  padding-left: 24px !important;
+  min-width: 0 !important;
+}
+
+.em-ft h4 {
+  margin: 0 0 14px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--tx) !important;
+}
+
+.em-ft ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.em-ft li {
+  margin: 0 !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: var(--mu) !important;
+  position: relative !important;
+  padding-left: 18px !important;
+}
+
+.em-ft li::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 6px !important;
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: var(--z, #0088ff) !important;
+  box-shadow: 0 0 8px var(--z, #0088ff) !important;
+}
+
+.em-ft li b {
+  display: block !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: var(--tx) !important;
+  margin-bottom: 2px !important;
+}
+
+/* Mobile & Tablet Responsive (< 900px) */
+@media (max-width: 900px) {
+  #stage3d #panel,
+  #panel {
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: calc(100vw - 24px) !important;
+    top: auto !important;
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+    max-height: 46% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border-radius: 18px !important;
+  }
+
+  #stage3d #panel.wide,
+  #panel.wide {
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: calc(100vw - 24px) !important;
+    top: auto !important;
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+    max-height: 80% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 16px 16px 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .ems {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .em-ft {
+    border-left: 0 !important;
+    padding-left: 0 !important;
+    border-top: 1px solid var(--line) !important;
+    padding-top: 16px !important;
+    margin-top: 6px !important;
+  }
+
+  .kp.k3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .em-2 {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+/* Light Theme for #panel.wide */
+[data-theme="light"] #stage3d #panel.wide,
+[data-theme="light"] #panel.wide {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  border-top: 3px solid var(--z, #0284c7) !important;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.2) !important;
+}
+
+[data-theme="light"] #panel.wide .pt span {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel.wide .pt .back {
+  background: #f1f5f9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel.wide .pt .back:hover {
+  background: #e2e8f0 !important;
+}
+
+[data-theme="light"] #panel.wide .pt em {
+  background: rgba(2, 132, 199, 0.1) !important;
+  border-color: rgba(2, 132, 199, 0.25) !important;
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] #panel .em-ft li b {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel .em-ft li {
+  color: #475569 !important;
+}
+
+[data-theme="light"] #panel .em-ft h4 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel .sh {
+  color: #64748b !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="light"] #panel .kp.k3 > div {
+  background: #f1f5f9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] #panel .kp.k3 b {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #panel .kp.k3 small {
+  color: #64748b !important;
+}
+
 /* == END_HERO_COMPACT == */
 </style>
 </head>
@@ -6168,7 +6484,7 @@ function renderEMS(i){emsOpen=true;const z=Z[i],E=z.ems,p=$('#panel');p.classLis
 
 const tile=(l,id,u,sub)=>`<div><small>${l}</small><b><span id='${id}'></span><em>${u}</em></b>${sub?`<small>${sub}</small>`:''}</div>`;
 
-p.innerHTML=`<div class='ems'><div><div class='pt'><i></i>${E.title}<em>Live</em><button class='btn back' id='back'>Close</button></div><p class='nt'>${z.note}</p><div class='kp k3'>${z.kpi.map((k,j)=>tile(k[0],'k'+j,k[2])).join('')}${E.t.map((t,j)=>tile(t[0],'e'+j,t[1],t[2])).join('')}</div>${z.id==='oee'?pieBox(true):`<div class='ch'><small>${E.ch}</small><svg viewBox='0 0 300 80' preserveAspectRatio='none' style='height:130px'><path id='ar' fill='${hex(z.c)}' opacity='.16'/><path id='ln' fill='none' stroke='${hex(z.c)}' stroke-width='2' vector-effect='non-scaling-stroke'/></svg></div>`}<div class='em-2'><div><small class='sh'>${E.fdt}</small>${E.fd.map((f,j)=>`<div class='fr'><span>${f[0]}</span><span id='fv${j}'></span><div class='fb'><i id='fb${j}'></i></div></div>`).join('')}</div><div><small class='sh'>Alerts and reports</small><div class='ls al'>${E.al.map(a=>`<div><u class='${a[1]}'></u><span>${a[0]}</span></div>`).join('')}</div></div></div></div><div class='ft em-ft'><h4>Key features</h4><ul>${z.feat.map(f=>`<li><b>${f[0]}</b>${f[1]}</li>`).join('')}</ul></div></div>`;upd(true)}
+p.innerHTML=`<div class='ems'><div><div class='pt'><i></i><span>${E.title}</span><em>Live</em><button class='btn back' id='back' aria-label='Close panel'><svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round'><path d='M18 6L6 18M6 6l12 12'/></svg> Close</button></div><p class='nt'>${z.note}</p><div class='kp k3'>${z.kpi.map((k,j)=>tile(k[0],'k'+j,k[2])).join('')}${E.t.map((t,j)=>tile(t[0],'e'+j,t[1],t[2])).join('')}</div>${z.id==='oee'?pieBox(true):`<div class='ch'><small>${E.ch}</small><svg viewBox='0 0 300 80' preserveAspectRatio='none' style='height:130px'><path id='ar' fill='${hex(z.c)}' opacity='.16'/><path id='ln' fill='none' stroke='${hex(z.c)}' stroke-width='2' vector-effect='non-scaling-stroke'/></svg></div>`}<div class='em-2'><div><small class='sh'>${E.fdt}</small>${E.fd.map((f,j)=>`<div class='fr'><span>${f[0]}</span><span id='fv${j}'></span><div class='fb'><i id='fb${j}'></i></div></div>`).join('')}</div><div><small class='sh'>Alerts and reports</small><div class='ls al'>${E.al.map(a=>`<div><u class='${a[1]}'></u><span>${a[0]}</span></div>`).join('')}</div></div></div></div><div class='ft em-ft'><h4>Key features</h4><ul>${z.feat.map(f=>`<li><b>${f[0]}</b>${f[1]}</li>`).join('')}</ul></div></div>`;upd(true)}
 
 function updEMS(){const E=Z[cs].ems;
 

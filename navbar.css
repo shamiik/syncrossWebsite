@@ -3358,7 +3358,12 @@ img, video, canvas, svg, iframe {
   right: 18px;
   top: 68px;
   width: 350px;
-  z-index: 4;
+  z-index: 10;
+}
+
+#stage3d #panel.wide {
+  width: min(920px, calc(100vw - 36px)) !important;
+  max-width: 920px !important;
 }
 
 /* =========================================================
