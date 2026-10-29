@@ -3567,160 +3567,270 @@ nav button{min-height:40px;padding:9px 13px;scroll-snap-align:center;flex:none}
 
 
 
-/* Tablet Dashboard Light Mode */
-
+/* Tablet Dashboard Light Mode - High Contrast Readability Overhaul */
 [data-theme="light"] #sx {
-
   --bg: #f8fafc;
-
   --cd: #ffffff;
-
   --cd2: #f1f5f9;
-
-  --ln: #e2e8f0;
-
+  --ln: #cbd5e1;
   --tx: #0f172a;
-
-  --mu: #64748b;
-
+  --mu: #334155;
+  color: #0f172a !important;
   background: linear-gradient(145deg, #e2e8f0, #cbd5e1 55%, #e2e8f0) !important;
-
   box-shadow: 0 40px 90px -30px rgba(15, 23, 42, 0.2), inset 0 0 0 2px rgba(255, 255, 255, 0.8), inset 0 0 0 7px #94a3b8 !important;
-
 }
-
-
 
 [data-theme="light"] #sx .sx-screen {
-
-  background: var(--bg) !important;
-
-  color: var(--tx) !important;
-
+  background: #f8fafc !important;
+  color: #0f172a !important;
 }
 
-
-
+/* Sidebar navigation */
 [data-theme="light"] #sx .sx-side {
-
   background: #f1f5f9 !important;
-
-  border-right: 1px solid #e2e8f0 !important;
-
+  border-right: 1px solid #cbd5e1 !important;
 }
-
-
 
 [data-theme="light"] #sx .sx-side button {
-
-  color: #334155 !important;
-
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
 }
 
 [data-theme="light"] #sx .sx-side button:hover {
-
   background: #e2e8f0 !important;
-
+  color: #0f172a !important;
 }
 
 [data-theme="light"] #sx .sx-side button.on {
-
   background: #ffffff !important;
-
   color: #0284c7 !important;
-
+  font-weight: 700 !important;
+  border-left-color: #0284c7 !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08) !important;
 }
 
-
-
+/* Top module tabs */
 [data-theme="light"] #sx .sx-tabs {
-
   background: #f1f5f9 !important;
-
-  border-bottom: 1px solid #e2e8f0 !important;
-
+  border-bottom: 1px solid #cbd5e1 !important;
 }
-
-
 
 [data-theme="light"] #sx .sx-tabs button {
-
-  color: #64748b !important;
-
+  color: #334155 !important;
+  font-weight: 600 !important;
+  font-size: 12.5px !important;
+  opacity: 0.9 !important;
 }
 
 [data-theme="light"] #sx .sx-tabs button:hover {
-
-  color: #0f172a !important;
-
+  color: #0284c7 !important;
+  opacity: 1 !important;
 }
 
 [data-theme="light"] #sx .sx-tabs button.on {
-
   background: #ffffff !important;
-
   color: #0f172a !important;
-
-  border-color: #e2e8f0 !important;
-
+  font-weight: 700 !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: inset 0 2px 0 var(--c, #0284c7) !important;
 }
 
-
-
+/* Card container */
 [data-theme="light"] #sx .card {
-
   background: #ffffff !important;
-
   border-color: #e2e8f0 !important;
-
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
-
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+  color: #0f172a !important;
 }
 
 [data-theme="light"] #sx .card h4 {
-
   color: #0f172a !important;
-
+  font-weight: 700 !important;
 }
 
 [data-theme="light"] #sx .card h4 small {
-
-  color: #64748b !important;
-
+  color: #0284c7 !important;
+  font-weight: 600 !important;
 }
 
-
-
-[data-theme="light"] #sx .sel {
-
-  background: #f8fafc !important;
-
-  border-color: #cbd5e1 !important;
-
+/* Specific text headings styled inline with pale colors */
+[data-theme="light"] #sx h4[style*="#9aabc8"],
+[data-theme="light"] #sx h4[style*="#a9b8d2"],
+[data-theme="light"] #sx .card h4[style*="color:#9aabc8"] {
   color: #0f172a !important;
-
+  font-weight: 700 !important;
 }
 
+/* KPI Card Labels (OVERALL OEE, AVAILABILITY, etc.) */
+[data-theme="light"] #sx .lbl,
+[data-theme="light"] #sx .kpi .lbl,
+[data-theme="light"] #sx .lbl[style*="#a9b8d2"] {
+  color: #475569 !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+}
 
+/* Hints & Subtitles (Standard ≥85%, Click a production line, etc.) */
+[data-theme="light"] #sx .hint,
+[data-theme="light"] #sx .kpi .hint,
+[data-theme="light"] #sx span.hint {
+  color: #475569 !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+}
 
+/* KPI Card Numbers Contrast Boost */
+[data-theme="light"] #sx .kpi .v {
+  font-weight: 800 !important;
+}
+
+[data-theme="light"] #sx .kpi .v[style*="#38bdf8"],
+[data-theme="light"] #sx .kpi .v[style*="rgb(56, 189, 248)"] {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] #sx .kpi .v[style*="#a855f7"],
+[data-theme="light"] #sx .kpi .v[style*="rgb(168, 85, 247)"] {
+  color: #7e22ce !important;
+}
+
+[data-theme="light"] #sx .kpi .v[style*="#10b981"],
+[data-theme="light"] #sx .kpi .v[style*="rgb(16, 185, 129)"] {
+  color: #059669 !important;
+}
+
+[data-theme="light"] #sx .kpi .v[style*="#ef4444"],
+[data-theme="light"] #sx .kpi .v[style*="rgb(239, 68, 68)"] {
+  color: #dc2626 !important;
+}
+
+/* KPI Progress track */
+[data-theme="light"] #sx .bar {
+  background: #e2e8f0 !important;
+}
+
+/* Select & Buttons in Filter Bar */
+[data-theme="light"] #sx .sel {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="light"] #sx .xb.gh {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05) !important;
+}
+
+[data-theme="light"] #sx .xb.gh:hover {
+  background: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+/* Waterfall Chart (.wf) */
+[data-theme="light"] #sx .wf {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="light"] #sx .wf span {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+}
+
+[data-theme="light"] #sx .wf .t {
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] #sx .wf .t i {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="light"] #sx .wf .ax {
+  color: #334155 !important;
+  font-weight: 600 !important;
+  border-top: 1px solid #e2e8f0 !important;
+  padding-top: 4px !important;
+}
+
+[data-theme="light"] #sx .wf .ax span {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+/* Chart SVGs & Axis Labels */
 [data-theme="light"] #sx .cx text {
-
-  fill: #64748b !important;
-
+  fill: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 10px !important;
 }
 
 [data-theme="light"] #sx .cx .gl {
-
-  stroke: rgba(15, 23, 42, 0.08) !important;
-
+  stroke: rgba(15, 23, 42, 0.1) !important;
 }
 
+/* Chart Legends */
+[data-theme="light"] #sx .lg {
+  color: #1e293b !important;
+}
 
+[data-theme="light"] #sx .lg button {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+}
+
+[data-theme="light"] #sx .lg button:hover {
+  background: #f1f5f9 !important;
+}
+
+[data-theme="light"] #sx .lg span,
+[data-theme="light"] #sx .lg span[style*="color:#c3d0e6"] {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+}
+
+/* Table elements */
+[data-theme="light"] #sx th {
+  color: #334155 !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
 
 [data-theme="light"] #sx td {
-
+  color: #1e293b !important;
   border-top-color: #e2e8f0 !important;
+}
 
+[data-theme="light"] #sx td b {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #sx td div[style*="#6aa7ff"] {
+  color: #0284c7 !important;
+  font-weight: 600 !important;
+}
+
+/* Production line cards */
+[data-theme="light"] #sx .line-card .hd span {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] #sx .line-card .apq span {
+  color: #334155 !important;
+  font-weight: 600 !important;
 }
 
 
