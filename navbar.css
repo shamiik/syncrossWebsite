@@ -3089,6 +3089,13 @@ img, video, canvas, svg, iframe {
   max-width: 100%;
 }
 
+/* Device mockups iframe reset (prevent clipping scaled device frames) */
+.dv iframe,
+.scr iframe {
+  max-width: none !important;
+  max-height: none !important;
+}
+
 /* Enhanced Mobile Drawer positioning & scrolling */
 @media (max-width: 980px) {
   .mob-drawer {
