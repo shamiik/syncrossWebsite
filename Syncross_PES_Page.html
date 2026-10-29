@@ -833,7 +833,18 @@
   [data-theme="light"] #stage3d #nav button,
   [data-theme="light"] nav button,
   [data-theme="light"] #nav button {
-    color: #475569 !important;
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  [data-theme="light"] #stage3d nav button:hover,
+  [data-theme="light"] #stage3d #nav button:hover,
+  [data-theme="light"] nav button:hover,
+  [data-theme="light"] #nav button:hover {
+    color: #0284c7 !important;
+    background: rgba(2, 132, 199, 0.08) !important;
   }
 
   #stage3d nav button.on,
@@ -852,7 +863,22 @@
   [data-theme="light"] #nav button.on {
     background: #0284c7 !important;
     color: #ffffff !important;
-    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 10px rgba(2, 132, 199, 0.4) !important;
+  }
+
+  [data-theme="light"] #stage3d nav button.on i,
+  [data-theme="light"] #stage3d #nav button.on i,
+  [data-theme="light"] nav button.on i,
+  [data-theme="light"] #nav button.on i {
+    background: #ffffff !important;
+  }
+
+  [data-theme="light"] #stage3d nav button i,
+  [data-theme="light"] #stage3d #nav button i,
+  [data-theme="light"] nav button i,
+  [data-theme="light"] #nav button i {
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.15);
   }
 
 /* == END_HERO_COMPACT == */
@@ -1995,7 +2021,7 @@ section.s::before{content:"";position:absolute;inset:0;pointer-events:none;backg
 
 [data-theme="light"] #top::after {
 
-  background: linear-gradient(transparent, #f8fafc) !important;
+  display: none !important;
 
 }
 
@@ -2117,11 +2143,11 @@ section.s::before{content:"";position:absolute;inset:0;pointer-events:none;backg
 
 [data-theme="light"] #nav {
 
-  background: rgba(255, 255, 255, 0.92) !important;
+  background: #ffffff !important;
 
-  border-color: rgba(15, 23, 42, 0.12) !important;
+  border-color: rgba(15, 23, 42, 0.16) !important;
 
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 6px 24px -4px rgba(15, 23, 42, 0.14), 0 2px 6px rgba(15, 23, 42, 0.06) !important;
 
 }
 
@@ -2129,7 +2155,21 @@ section.s::before{content:"";position:absolute;inset:0;pointer-events:none;backg
 
 [data-theme="light"] #nav button {
 
-  color: #475569 !important;
+  color: #0f172a !important;
+
+  font-weight: 600 !important;
+
+  font-size: 13px !important;
+
+  letter-spacing: -0.01em !important;
+
+}
+
+[data-theme="light"] #nav button:hover {
+
+  color: #0284c7 !important;
+
+  background: rgba(2, 132, 199, 0.08) !important;
 
 }
 
@@ -2140,6 +2180,22 @@ section.s::before{content:"";position:absolute;inset:0;pointer-events:none;backg
   background: #0284c7 !important;
 
   color: #ffffff !important;
+
+  font-weight: 700 !important;
+
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.4) !important;
+
+}
+
+[data-theme="light"] #nav button.on i {
+
+  background: #ffffff !important;
+
+}
+
+[data-theme="light"] #nav button i {
+
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.15);
 
 }
 
@@ -3605,13 +3661,29 @@ function updatePesSceneTheme(th){
 
       S.background=new THREE.Color(0xf8fafc);
 
-      if(S.fog)S.fog.color=new THREE.Color(0xf8fafc);
+      if(S.fog){
+
+        S.fog.color=new THREE.Color(0xf8fafc);
+
+        S.fog.near=320;
+
+        S.fog.far=700;
+
+      }
 
     }else{
 
       S.background=new THREE.Color(0x070d17);
 
-      if(S.fog)S.fog.color=new THREE.Color(0x070d17);
+      if(S.fog){
+
+        S.fog.color=new THREE.Color(0x070d17);
+
+        S.fog.near=190;
+
+        S.fog.far=480;
+
+      }
 
     }
 

@@ -3508,7 +3508,18 @@ img, video, canvas, svg, iframe {
   [data-theme="light"] #stage3d #nav button,
   [data-theme="light"] nav button,
   [data-theme="light"] #nav button {
-    color: #475569 !important;
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  [data-theme="light"] #stage3d nav button:hover,
+  [data-theme="light"] #stage3d #nav button:hover,
+  [data-theme="light"] nav button:hover,
+  [data-theme="light"] #nav button:hover {
+    color: #0284c7 !important;
+    background: rgba(2, 132, 199, 0.08) !important;
   }
 
   #stage3d nav button.on,
@@ -3527,7 +3538,26 @@ img, video, canvas, svg, iframe {
   [data-theme="light"] #nav button.on {
     background: #0284c7 !important;
     color: #ffffff !important;
-    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 10px rgba(2, 132, 199, 0.4) !important;
+  }
+
+  [data-theme="light"] #stage3d nav button.on i,
+  [data-theme="light"] #stage3d #nav button.on i,
+  [data-theme="light"] nav button.on i,
+  [data-theme="light"] #nav button.on i {
+    background: #ffffff !important;
+  }
+
+  [data-theme="light"] #stage3d nav button i,
+  [data-theme="light"] #stage3d #nav button i,
+  [data-theme="light"] nav button i,
+  [data-theme="light"] #nav button i {
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.15);
+  }
+
+  [data-theme="light"] #top::after {
+    display: none !important;
   }
 
 
