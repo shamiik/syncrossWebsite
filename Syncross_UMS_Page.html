@@ -4872,21 +4872,21 @@ header.scrolled{background:rgba(6,10,18,.72);backdrop-filter:blur(18px) saturate
 }
 
 
-  /* Elongated Full-Span 3D Navigation Bar Pill */
+  /* 3D Navigation Bar Pill: Centered on Tablet, Laptop, and Larger Screens (>= 768px) */
   #stage3d nav,
   #stage3d #nav,
   nav,
   #nav {
     position: absolute !important;
-    left: 14px !important;
-    right: 14px !important;
+    left: 50% !important;
+    right: auto !important;
     bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
-    transform: none !important;
-    width: auto !important;
-    max-width: calc(100% - 28px) !important;
-    display: flex !important;
+    transform: translateX(-50%) !important;
+    width: max-content !important;
+    max-width: calc(100% - 32px) !important;
+    display: inline-flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     gap: 6px !important;
     padding: 6px 10px !important;
     background: rgba(9, 18, 34, 0.88) !important;
@@ -4899,6 +4899,22 @@ header.scrolled{background:rgba(6,10,18,.72);backdrop-filter:blur(18px) saturate
     scrollbar-width: none !important;
     z-index: 10 !important;
     box-sizing: border-box !important;
+  }
+
+  /* Full display span only on Mobile (< 768px) */
+  @media (max-width: 767px) {
+    #stage3d nav,
+    #stage3d #nav,
+    nav,
+    #nav {
+      left: 14px !important;
+      right: 14px !important;
+      transform: none !important;
+      width: auto !important;
+      max-width: calc(100% - 28px) !important;
+      display: flex !important;
+      justify-content: flex-start !important;
+    }
   }
 
   [data-theme="light"] #stage3d nav,
