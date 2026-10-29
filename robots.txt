@@ -7,3 +7,4 @@ Host: https://syncross.ai
 
 # Sitemaps
 Sitemap: https://syncross.ai/sitemap.xml
+
