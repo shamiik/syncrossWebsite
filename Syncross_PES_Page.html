@@ -5477,9 +5477,9 @@ else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.is
 
  els.concat([].slice.call(document.querySelectorAll('.final-cta'))).forEach(function(e,i){e.style.transitionDelay=(i%3)*70+'ms';io.observe(e)})}
 
-var links=[].slice.call(document.querySelectorAll('.tn a'));
+var links=[].slice.call(document.querySelectorAll('.tn a')).filter(function(a){var h=a.getAttribute('href');return h&&h.startsWith('#')&&h.length>1});
 
-var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+var secs=links.map(function(a){try{return document.querySelector(a.getAttribute('href'))}catch(e){return null}});
 
 addEventListener('scroll',function(){var y=scrollY+140,cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top+scrollY<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('on',i===cur)})},{passive:true});
 

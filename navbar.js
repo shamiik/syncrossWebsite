@@ -135,7 +135,7 @@
     </div>
     <a href="projects.html"${page === 'projects.html' ? ' class="active"' : ''}>Projects</a>
     <a href="about.html"${page === 'about.html' ? ' class="active"' : ''}>About</a>
-    <a href="https://blogs.syncross.ai">Blogs</a>
+    <a href="https://blogs.syncross.ai" target="_blank" rel="noopener noreferrer">Blogs</a>
     <a href="contact.html"${page === 'contact.html' ? ' class="active"' : ''}>Contact</a>
   </div>
   <div class="header-actions">
@@ -173,7 +173,7 @@
     </div>
     <a href="projects.html"${page === 'projects.html' ? ' class="active"' : ''}>Projects</a>
     <a href="about.html"${page === 'about.html' ? ' class="active"' : ''}>About</a>
-    <a href="https://blogs.syncross.ai">Blogs</a>
+    <a href="https://blogs.syncross.ai" target="_blank" rel="noopener noreferrer">Blogs</a>
     <a href="contact.html"${page === 'contact.html' ? ' class="active"' : ''}>Contact</a>
   </div>
   <a class="btn pri" href="${ctaHref}" ${ctaAttr} style="text-align:center;justify-content:center;margin-top:8px;">Get Demo</a>
