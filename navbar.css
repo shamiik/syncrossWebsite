@@ -3556,7 +3556,7 @@ img, video, canvas, svg, iframe {
     box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.15);
   }
 
-  [data-theme="light"] #top::after {
+  #top::after {
     display: none !important;
   }
 

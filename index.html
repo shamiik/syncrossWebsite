@@ -6063,7 +6063,7 @@ const isDarkInit = initialTheme === 'dark';
 
 S.background = new THREE.Color(isDarkInit ? 0x07101d : 0xf1f5f9);
 
-S.fog = new THREE.Fog(isDarkInit ? 0x07101d : 0xf1f5f9, 170, 440);
+S.fog = new THREE.Fog(isDarkInit ? 0x07101d : 0xf1f5f9, 320, 700);
 
 function apply3DTheme(theme) {
 
@@ -6075,7 +6075,15 @@ function apply3DTheme(theme) {
 
   S.background.set(c);
 
-  if (S.fog) S.fog.color.set(c);
+  if (S.fog) {
+
+    S.fog.color.set(c);
+
+    S.fog.near = 320;
+
+    S.fog.far = 700;
+
+  }
 
   if (typeof gr !== 'undefined' && gr && gr.material) {
 

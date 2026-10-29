@@ -963,7 +963,7 @@ header.scrolled{background:rgba(7,13,23,.86);border-color:var(--line);-webkit-ba
 
 #top{position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;background:var(--bg)}
 
-#top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(transparent,var(--bg));pointer-events:none;z-index:1}
+#top::after{display:none!important}
 
 #c{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
 
@@ -3679,9 +3679,9 @@ function updatePesSceneTheme(th){
 
         S.fog.color=new THREE.Color(0x070d17);
 
-        S.fog.near=190;
+        S.fog.near=320;
 
-        S.fog.far=480;
+        S.fog.far=700;
 
       }
 
@@ -3691,7 +3691,7 @@ function updatePesSceneTheme(th){
 
 }
 
-S.background=new THREE.Color(0x070d17);S.fog=new THREE.Fog(0x070d17,190,480);
+S.background=new THREE.Color(0x070d17);S.fog=new THREE.Fog(0x070d17,320,700);
 
 try{var curTh=document.documentElement.getAttribute('data-theme')||localStorage.getItem('syncross_theme')||'light';updatePesSceneTheme(curTh);}catch(e){}
 
