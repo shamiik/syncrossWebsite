@@ -178,6 +178,13 @@
 </div>
 `.trim();
 
+    // Immediately purge any empty or stray rogue footers that may exist before main content
+    document.querySelectorAll('footer').forEach(function(f) {
+      if (!f.querySelector('.footer-grid') && !f.querySelector('.wrap')) {
+        f.remove();
+      }
+    });
+
     // Clean up any existing header or drawer elements
     const oldHeader = document.getElementById('gh');
     const oldDrawer = document.getElementById('mobDrawer');
@@ -369,14 +376,28 @@
 
     // 6. Universal Footer Component (Single-source-of-truth matching index.html)
     function initFooter() {
-      // Clean up any stray footer mistakenly created before #top
+      // Ensure no footer ever appears before main content or top section
+      const topSection = document.getElementById('top') || document.getElementById('hero') || document.querySelector('main') || document.getElementById('lp');
       const allFooters = document.querySelectorAll('footer');
-      if (allFooters.length > 1) {
-        allFooters.forEach(function(f, i) {
-          if (i < allFooters.length - 1) {
-            f.remove();
-          }
-        });
+
+      allFooters.forEach(function(f) {
+        // Remove empty rogue footers
+        if (!f.querySelector('.footer-grid') && !f.querySelector('.wrap')) {
+          f.remove();
+          return;
+        }
+        // If a footer appears physically BEFORE the top/main content, remove it
+        if (topSection && (topSection.compareDocumentPosition(f) & Node.DOCUMENT_POSITION_PRECEDING)) {
+          f.remove();
+        }
+      });
+
+      // Keep only the single legitimate footer at the end of the document
+      const remainingFooters = document.querySelectorAll('footer');
+      if (remainingFooters.length > 1) {
+        for (let i = 0; i < remainingFooters.length - 1; i++) {
+          remainingFooters[i].remove();
+        }
       }
 
       // Only configure the legitimate footer at the bottom of the page

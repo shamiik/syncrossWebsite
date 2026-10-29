@@ -1,0 +1,9 @@
+# robots.txt for https://syncross.ai
+User-agent: *
+Allow: /
+
+# Host
+Host: https://syncross.ai
+
+# Sitemaps
+Sitemap: https://syncross.ai/sitemap.xml
