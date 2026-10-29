@@ -4922,65 +4922,80 @@ nav button{min-height:40px;padding:9px 13px;scroll-snap-align:center;flex:none}
 }
 
 #panel.wide .pt {
-  font-size: 20px !important;
+  font-size: 17.5px !important;
   font-weight: 700 !important;
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
+  gap: 8px !important;
   margin-bottom: 8px !important;
   flex-wrap: wrap !important;
+  min-width: 0 !important;
 }
 
 #panel.wide .pt i {
-  width: 10px !important;
-  height: 10px !important;
+  width: 9px !important;
+  height: 9px !important;
   flex-shrink: 0 !important;
 }
 
 #panel.wide .pt span {
-  font-size: 19px !important;
+  font-size: clamp(16px, 1.4vw, 17.5px) !important;
   font-weight: 700 !important;
   color: var(--tx) !important;
+  line-height: 1.25 !important;
 }
 
 #panel.wide .pt em {
   font-style: normal !important;
   font-size: 11px !important;
   font-weight: 600 !important;
-  padding: 3px 9px !important;
+  padding: 0 8px !important;
+  height: 22px !important;
   border-radius: 999px !important;
   background: rgba(52, 211, 153, 0.16) !important;
   color: #10b981 !important;
   border: 1px solid rgba(52, 211, 153, 0.35) !important;
   margin-left: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  line-height: 1 !important;
 }
 
 #panel.wide .pt .back {
   margin-left: auto !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  padding: 7px 16px !important;
-  font-size: 13px !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  padding: 0 10px !important;
+  height: 22px !important;
+  font-size: 11.5px !important;
   font-weight: 600 !important;
   border-radius: 999px !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
   color: #fff !important;
   cursor: pointer !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  line-height: 1 !important;
   transition: all 0.2s ease !important;
 }
 
 #panel.wide .pt .back:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
   transform: translateY(-1px) !important;
 }
 
 /* 2-Column layout on Desktop */
 .ems {
   display: grid !important;
-  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) !important;
-  gap: 26px !important;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) !important;
+  gap: 24px !important;
   align-items: start !important;
 }
 
@@ -6484,7 +6499,7 @@ function renderEMS(i){emsOpen=true;const z=Z[i],E=z.ems,p=$('#panel');p.classLis
 
 const tile=(l,id,u,sub)=>`<div><small>${l}</small><b><span id='${id}'></span><em>${u}</em></b>${sub?`<small>${sub}</small>`:''}</div>`;
 
-p.innerHTML=`<div class='ems'><div><div class='pt'><i></i><span>${E.title}</span><em>Live</em><button class='btn back' id='back' aria-label='Close panel'><svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round'><path d='M18 6L6 18M6 6l12 12'/></svg> Close</button></div><p class='nt'>${z.note}</p><div class='kp k3'>${z.kpi.map((k,j)=>tile(k[0],'k'+j,k[2])).join('')}${E.t.map((t,j)=>tile(t[0],'e'+j,t[1],t[2])).join('')}</div>${z.id==='oee'?pieBox(true):`<div class='ch'><small>${E.ch}</small><svg viewBox='0 0 300 80' preserveAspectRatio='none' style='height:130px'><path id='ar' fill='${hex(z.c)}' opacity='.16'/><path id='ln' fill='none' stroke='${hex(z.c)}' stroke-width='2' vector-effect='non-scaling-stroke'/></svg></div>`}<div class='em-2'><div><small class='sh'>${E.fdt}</small>${E.fd.map((f,j)=>`<div class='fr'><span>${f[0]}</span><span id='fv${j}'></span><div class='fb'><i id='fb${j}'></i></div></div>`).join('')}</div><div><small class='sh'>Alerts and reports</small><div class='ls al'>${E.al.map(a=>`<div><u class='${a[1]}'></u><span>${a[0]}</span></div>`).join('')}</div></div></div></div><div class='ft em-ft'><h4>Key features</h4><ul>${z.feat.map(f=>`<li><b>${f[0]}</b>${f[1]}</li>`).join('')}</ul></div></div>`;upd(true)}
+p.innerHTML=`<div class='ems'><div><div class='pt'><i></i><span>${E.title}</span><em>Live</em><button class='btn back' id='back' aria-label='Close panel'><svg width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.6' stroke-linecap='round'><path d='M18 6L6 18M6 6l12 12'/></svg> Close</button></div><p class='nt'>${z.note}</p><div class='kp k3'>${z.kpi.map((k,j)=>tile(k[0],'k'+j,k[2])).join('')}${E.t.map((t,j)=>tile(t[0],'e'+j,t[1],t[2])).join('')}</div>${z.id==='oee'?pieBox(true):`<div class='ch'><small>${E.ch}</small><svg viewBox='0 0 300 80' preserveAspectRatio='none' style='height:130px'><path id='ar' fill='${hex(z.c)}' opacity='.16'/><path id='ln' fill='none' stroke='${hex(z.c)}' stroke-width='2' vector-effect='non-scaling-stroke'/></svg></div>`}<div class='em-2'><div><small class='sh'>${E.fdt}</small>${E.fd.map((f,j)=>`<div class='fr'><span>${f[0]}</span><span id='fv${j}'></span><div class='fb'><i id='fb${j}'></i></div></div>`).join('')}</div><div><small class='sh'>Alerts and reports</small><div class='ls al'>${E.al.map(a=>`<div><u class='${a[1]}'></u><span>${a[0]}</span></div>`).join('')}</div></div></div></div><div class='ft em-ft'><h4>Key features</h4><ul>${z.feat.map(f=>`<li><b>${f[0]}</b>${f[1]}</li>`).join('')}</ul></div></div>`;upd(true)}
 
 function updEMS(){const E=Z[cs].ems;
 
